@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Create from "./components/Createe";
+import View from "./components/View";
+import React from "react";
+import Update from "./components/Updatee";
 
 function App() {
+  const padding = {
+    padding: 10,
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <div>
+          {/* <Link to="/">Home</Link> */}
+          <Link style={padding} to="/create">
+            Create
+          </Link>
+          <Link style={padding} to="/view">
+            View
+          </Link>
+          {/* <Link style={padding} to="/update">View</Link> */}
+        </div>
+        <Routes>
+          {/* <Route path="/" element={<App />} /> */}
+          <Route exact path="/create" element={<Create />} />
+          <Route exact path="/view" element={<View />} />
+          {/* <Route exact path="/update/:id" element={<Update />} /> */}
+          <Route exact path="/update/:id" element={<Update />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
