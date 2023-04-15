@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const View = () => {
+  
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 

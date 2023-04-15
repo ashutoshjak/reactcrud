@@ -5,6 +5,7 @@ import React from "react";
 import Update from "./components/Updatee";
 
 function App() {
+
   const padding = {
     padding: 10,
   };
@@ -20,13 +21,11 @@ function App() {
           <Link style={padding} to="/view">
             View
           </Link>
-          {/* <Link style={padding} to="/update">View</Link> */}
         </div>
         <Routes>
           {/* <Route path="/" element={<App />} /> */}
-          <Route exact path="/create" element={<Create />} />
+          <Route exact path="/create" element={<Create />}/>
           <Route exact path="/view" element={<View />} />
-          {/* <Route exact path="/update/:id" element={<Update />} /> */}
           <Route exact path="/update/:id" element={<Update />} />
         </Routes>
       </BrowserRouter>
